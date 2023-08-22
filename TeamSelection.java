@@ -19,9 +19,9 @@ class TeamSelection{
 			TeamCreate.readTennisMember(players);
 			Print.printPlayerNumberCheck(players.size(), 2);
 
-			System.out.println("\n\n\n\n1 팀원 선택");
+			System.out.println("\n1 팀원 선택");
 			teamSelect(players, team1);
-			System.out.println("\n\n\n\n2 팀원 선택" );
+			System.out.println("\n2 팀원 선택" );
 			teamSelect(players, team2);
 
 		}else if(rule == 2){
@@ -30,11 +30,11 @@ class TeamSelection{
 
 				TeamCreate.readTennisMember(players);
 				Print.printPlayerNumberCheck(players.size(), 4);
-				System.out.println("\n\n\n\n1 팀원 선택");
+				System.out.println("\n1 팀원 선택");
 				teamSelect(players, team1);
 				teamSelect(players, team1);
 
-				System.out.println("\n\n\n\n\n2 팀원 선택");
+				System.out.println("\n2 팀원 선택");
 				teamSelect(players, team2);
 				teamSelect(players, team2);
 			}

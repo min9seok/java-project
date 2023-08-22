@@ -1,12 +1,10 @@
 package javaProject;
 
 class MatchPoint {
-	private int score;   //기본값 0
-	private int game;   //기본값 0
-	private int set;   //기본값 0
-//	private int deuceScore;
-
-	//이겼을 때 점수, 게임, 세트 증가시켜주는 메서드들
+	private int score;   
+	private int game;   
+	private int set;   
+	
 	public void plusScore() {
 		this.score++;
 	}
@@ -38,13 +36,4 @@ class MatchPoint {
 	public void setSet(int set) {
 		this.set = set;
 	}
-//	public int getDeuceScore() {
-//		return score;
-//	}
-//	public void setDeuceScore(int score) {
-//		this.score = score;
-//	}
-//	public void plusDeuceScore() {
-//		this.score++;
-//	}
 }

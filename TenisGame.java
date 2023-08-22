@@ -1,9 +1,11 @@
 package javaProject;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class TenisGame {
 
 	public static void main(String[] args) {
@@ -59,128 +61,194 @@ public class TenisGame {
 
 				while (t1.getScore()<4 &&t2.getScore()<4) {
 					if (t1.getSet()==winSet) {
-						System.out.println("team1 승리");
+						System.out.println("\n\n\n\n\n\n");
+						System.out.println("      ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄      \r\n"
+								+ "     ▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌     \r\n"
+								+ "     ▐░█▀▀▀▀▀▀▀█░▌      ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌   ▐░▐░▌     \r\n"
+								+ "     ▐░▌       ▐░▌          ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌     \r\n"
+								+ "     ▐░█▄▄▄▄▄▄▄█░▌          ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▐░▌ ▐░▌     \r\n"
+								+ "     ▐░░░░░░░░░░░▌          ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌     \r\n"
+								+ "     ▐░█▀▀▀▀▀▀▀█░▌          ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▀   ▐░▌     \r\n"
+								+ "     ▐░▌       ▐░▌          ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌     \r\n"
+								+ "     ▐░▌       ▐░▌          ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌▐░▌       ▐░▌     \r\n"
+								+ "     ▐░▌       ▐░▌          ▐░▌     ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌     \r\n"
+								+ "      ▀         ▀            ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀         ▀      \r\n"
+								+ "                                                                                \r\n"
+								+ "                ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄  ▄                     \r\n"
+								+ "               ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌       ▐░▌ ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌     ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌       ▐░▌     ▐░▌     ▐░▌▐░▌    ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌   ▄   ▐░▌     ▐░▌     ▐░▌ ▐░▌   ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌  ▐░▌  ▐░▌     ▐░▌     ▐░▌  ▐░▌  ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌ ▐░▌░▌ ▐░▌     ▐░▌     ▐░▌   ▐░▌ ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌▐░▌ ▐░▌▐░▌     ▐░▌     ▐░▌    ▐░▌▐░▌ ▀  ▀                     \r\n"
+								+ "               ▐░▌░▌   ▐░▐░▌ ▄▄▄▄█░█▄▄▄▄ ▐░▌     ▐░▐░▌ ▄  ▄                     \r\n"
+								+ "               ▐░░▌     ▐░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░▌▐░▌                    \r\n"
+								+ "                ▀▀       ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀  ▀                     \r\n"
+								+ "                                                                                ");
+						try {					
+				       		System.out.println("> 종료는 엔터를 누르세요.");
+				       		System.in.read();
+				       		System.in.skip(System.in.available());			       		
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
 						return;
 					}else if (t2.getSet()==winSet) {
-						System.out.println("team2 승리");
+						System.out.println("\n\n\n\n\n\n");
+						System.out.println("      ▄▄▄▄▄▄▄▄▄▄        ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄      \r\n"
+								+ "     ▐░░░░░░░░░░▌      ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌     \r\n"
+								+ "     ▐░█▀▀▀▀▀▀▀█░▌      ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌   ▐░▐░▌     \r\n"
+								+ "     ▐░▌       ▐░▌          ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌     \r\n"
+								+ "     ▐░█▄▄▄▄▄▄▄█░▌          ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▐░▌ ▐░▌     \r\n"
+								+ "     ▐░░░░░░░░░░▌           ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌     \r\n"
+								+ "     ▐░█▀▀▀▀▀▀▀█░▌          ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▀   ▐░▌     \r\n"
+								+ "     ▐░▌       ▐░▌          ▐░▌     ▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌     \r\n"
+								+ "     ▐░█▄▄▄▄▄▄▄█░▌          ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌▐░▌       ▐░▌     \r\n"
+								+ "     ▐░░░░░░░░░░▌           ▐░▌     ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌     \r\n"
+								+ "      ▀▀▀▀▀▀▀▀▀▀             ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀         ▀      \r\n"
+								+ "                                                                                \r\n"
+								+ "                ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄  ▄                     \r\n"
+								+ "               ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌       ▐░▌ ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌     ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌       ▐░▌     ▐░▌     ▐░▌▐░▌    ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌   ▄   ▐░▌     ▐░▌     ▐░▌ ▐░▌   ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌  ▐░▌  ▐░▌     ▐░▌     ▐░▌  ▐░▌  ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌ ▐░▌░▌ ▐░▌     ▐░▌     ▐░▌   ▐░▌ ▐░▌▐░▌▐░▌                    \r\n"
+								+ "               ▐░▌▐░▌ ▐░▌▐░▌     ▐░▌     ▐░▌    ▐░▌▐░▌ ▀  ▀                     \r\n"
+								+ "               ▐░▌░▌   ▐░▐░▌ ▄▄▄▄█░█▄▄▄▄ ▐░▌     ▐░▐░▌ ▄  ▄                     \r\n"
+								+ "               ▐░░▌     ▐░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░▌▐░▌                    \r\n"
+								+ "                ▀▀       ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀  ▀                     \r\n"
+								+ "                                                                                ");
+						try {					
+				       		System.out.println(">종료는 엔터를 누르세요.");
+				       		System.in.read();
+				       		System.in.skip(System.in.available());			       		
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
 						return;
 					}
-					try {
-			       		System.out.println("> 아무키나 누르세요.");
+					try {					
+			       		System.out.println("> 엔터를 누르세요.");
 			       		System.in.read();
-			       		System.in.skip(System.in.available());
+			       		System.in.skip(System.in.available());			       		
 					}catch (Exception e) {
 						e.printStackTrace();
 					}
 					
 					int n = rnd.nextInt(2)+1;
-					if (n==1) {
-					if(t1.getScore()==3 && t2.getScore()<3) {
-						t1.plusScore();
-						t1.plusScore();
-					}else {
-						t1.plusScore();
-					}
-					}
-					else if(n==2) {
-						if(t1.getScore()<3&& t2.getScore()==3) {
-							t2.plusScore();
-							t2.plusScore();
-						}else {
-							t2.plusScore();
-						}	
-					}
-					Print.dispScoreBoard(team1, team2, t1, t2); 
+					pointWinner(n,team1,team2,t1, t2);
+					pointgameWinner(n, team1, team2, t1, t2);
+					pointsetWinner(n, team1, team2, t1, t2);
+//					if (n==1) {
+//					if(t1.getScore()==3 && t2.getScore()<3) {
+//						t1.plusScore();
+//						t1.plusScore();
+//					}else {
+//						t1.plusScore();
+//					}
+//					}
+//					else if(n==2) {
+//						if(t1.getScore()<3&& t2.getScore()==3) {
+//							t2.plusScore();
+//							t2.plusScore();
+//						}else {
+//							t2.plusScore();
+//						}	
+//					}
+//					Print.dispScoreBoard(team1, team2, t1, t2); 
 
 
-					if(t1.getScore()==3 && t2.getScore()==3) {
-						while (Math.abs(t1.getScore() - t2.getScore())<2) {
-							try {
-					       		System.out.println("> 아무키나 누르세요.");
-					       		System.in.read();
-					       		System.in.skip(System.in.available());
-							}catch (Exception e) {
-								e.printStackTrace();
-							}
-							n = rnd.nextInt(2)+1;
-							if (n==1) {
-								if(t2.getScore() > t1.getScore()) {
-									t2.minusScore();	
-								}else if(t1.getScore() > t2.getScore()) {
-									t1.plusScore();
-								}else if(t1.getScore()==t2.getScore()) {
-									t1.plusScore();
-								}
-							} else if(n==2) {
-								if(t1.getScore() > t2.getScore()) {
-									t1.minusScore();
-								}else if(t2.getScore() > t1.getScore()) {
-									t2.plusScore();
-								}else if(t2.getScore()==t1.getScore()) {
-									t2.plusScore();
-								}
-							}
-							Print.dispScoreBoard(team1, team2, t1, t2); 
-						}
-					}
-					if (t1.getGame()==5 && t2.getGame()==5) {
-						while (Math.abs(t1.getGame()-t2.getGame())<2) {
-							try {
-					       		System.out.println("> 아무키나 누르세요.");
-					       		System.in.read();
-					       		System.in.skip(System.in.available());
-							}catch (Exception e) {
-								e.printStackTrace();
-							}
-							if(t1.getScore()==0&&t2.getScore()==0) {
-							t1.setScore(0); t2.setScore(0);
-							}
-							n = rnd.nextInt(2)+1;
-							if (n==1) {
-								if(t1.getScore()==3 && t2.getScore()<3) {
-									t1.plusScore();
-									t1.plusScore();
-								}else {
-									t1.plusScore();
-								}
-								}
-								else if(n==2) {
-									if(t1.getScore()<3&& t2.getScore()==3) {
-										t2.plusScore();
-										t2.plusScore();
-									}else {
-										t2.plusScore();
-									}	
-								}
-							
-							Print.dispScoreBoard(team1, team2, t1, t2); 
-
-							if (t1.getScore()==5) {
-								t1.plusGame();
-								t1.setScore(0); t2.setScore(0);
-								Print.dispScoreBoard(team1, team2, t1, t2); 
-							}else if (t2.getScore()==5) {
-								t2.plusGame();
-								t1.setScore(0); t2.setScore(0);
-								Print.dispScoreBoard(team1, team2, t1, t2); 
-							}
-
-							if (t1.getGame() - t2.getGame() ==2) {
-								t1.plusSet();
-								t1.setScore(0); t2.setScore(0);
-								t1.setGame(0); t2.setGame(0);
-								Print.dispScoreBoard(team1, team2, t1, t2); 
-								break;
-							}else if ( t2.getGame() - t1.getGame() ==2) {
-								t2.plusSet();
-								t1.setScore(0); t2.setScore(0);
-								t1.setGame(0); t2.setGame(0);
-								Print.dispScoreBoard(team1, team2, t1, t2); 
-								break;
-							}
-						}//while
-
-					}//gameDeuce
+//					if(t1.getScore()==3 && t2.getScore()==3) {
+//						
+//						while (Math.abs(t1.getScore() - t2.getScore())<2) {
+//							try {
+//					       		System.out.println("> 엔터를 누르세요.");
+//					       		System.in.read();
+//					       		System.in.skip(System.in.available());
+//							}catch (Exception e) {
+//								e.printStackTrace();
+//							}
+//							n = rnd.nextInt(2)+1;
+//							if (n==1) {
+//								if(t2.getScore() > t1.getScore()) {
+//									t2.minusScore();	
+//								}else if(t1.getScore() > t2.getScore()) {
+//									t1.plusScore();
+//								}else if(t1.getScore()==t2.getScore()) {
+//									t1.plusScore();
+//								}
+//							} else if(n==2) {
+//								if(t1.getScore() > t2.getScore()) {
+//									t1.minusScore();
+//								}else if(t2.getScore() > t1.getScore()) {
+//									t2.plusScore();
+//								}else if(t2.getScore()==t1.getScore()) {
+//									t2.plusScore();
+//								}
+//							}
+//							Print.dispScoreBoard(team1, team2, t1, t2); 
+//						}
+//					}
+//					if (t1.getGame()==5 && t2.getGame()==5) {
+//						while (Math.abs(t1.getGame()-t2.getGame())<2) {
+//							try {
+//					       		System.out.println("> 엔터를 누르세요.");
+//					       		System.in.read();
+//					       		System.in.skip(System.in.available());
+//							}catch (Exception e) {
+//								e.printStackTrace();
+//							}
+//							if(t1.getScore()==0&&t2.getScore()==0) {
+//							t1.setScore(0); t2.setScore(0);
+//							}
+//							n = rnd.nextInt(2)+1;
+//							if (n==1) {
+//								if(t1.getScore()==3 && t2.getScore()<3) {
+//									t1.plusScore();
+//									t1.plusScore();
+//								}else {
+//									t1.plusScore();
+//								}
+//								}
+//								else if(n==2) {
+//									if(t1.getScore()<3&& t2.getScore()==3) {
+//										t2.plusScore();
+//										t2.plusScore();
+//									}else {
+//										t2.plusScore();
+//									}	
+//								}
+//							
+//							Print.dispScoreBoard(team1, team2, t1, t2); 
+//
+//							if (t1.getScore()==5) {
+//								t1.plusGame();
+//								t1.setScore(0); t2.setScore(0);
+//								Print.dispScoreBoard(team1, team2, t1, t2); 
+//							}else if (t2.getScore()==5) {
+//								t2.plusGame();
+//								t1.setScore(0); t2.setScore(0);
+//								Print.dispScoreBoard(team1, team2, t1, t2); 
+//							}
+//
+//							if (t1.getGame() - t2.getGame() ==2) {
+//								t1.plusSet();
+//								t1.setScore(0); t2.setScore(0);
+//								t1.setGame(0); t2.setGame(0);
+//								Print.dispScoreBoard(team1, team2, t1, t2); 
+//								break;
+//							}else if ( t2.getGame() - t1.getGame() ==2) {
+//								t2.plusSet();
+//								t1.setScore(0); t2.setScore(0);
+//								t1.setGame(0); t2.setGame(0);
+//								Print.dispScoreBoard(team1, team2, t1, t2); 
+//								break;
+//							}
+//						}
+//
+//					}
 					if (t1.getScore()==5) {
 						t1.plusGame();
 						t1.setScore(0);
@@ -204,10 +272,120 @@ public class TenisGame {
 							t2.setGame(0);
 							Print.dispScoreBoard(team1, team2, t1, t2); 
 						} 
-					}//else if
-				}//while_score
-			}//while_game
-		}//while_set
+					}
+				}//score
+			}//game
+		}//set
 
 	}//main
+	public static void pointWinner(int p,ArrayList<Player> team1,ArrayList<Player> team2,MatchPoint t1,MatchPoint t2){		
+		if (p==1) {
+		if(t1.getScore()==3 && t2.getScore()<3) {
+			t1.plusScore();
+			t1.plusScore();
+		}else {
+			t1.plusScore();
+		}
+		}
+		else if(p==2) {
+			if(t1.getScore()<3&& t2.getScore()==3) {
+				t2.plusScore();
+				t2.plusScore();
+			}else {
+				t2.plusScore();
+			}	
+		}		
+		Print.dispScoreBoard(team1, team2, t1, t2); 
+	}
+	public static void pointgameWinner(int p,ArrayList<Player> team1,ArrayList<Player> team2,MatchPoint t1,MatchPoint t2){		
+		if(t1.getScore()==3 && t2.getScore()==3) {
+			
+			while (Math.abs(t1.getScore() - t2.getScore())<2) {
+				try {
+		       		System.out.println("> 엔터를 누르세요.");
+		       		System.in.read();
+		       		System.in.skip(System.in.available());
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+				if (p==1) {
+					if(t2.getScore() > t1.getScore()) {
+						t2.minusScore();	
+					}else if(t1.getScore() > t2.getScore()) {
+						t1.plusScore();
+					}else if(t1.getScore()==t2.getScore()) {
+						t1.plusScore();
+					}
+				} else if(p==2) {
+					if(t1.getScore() > t2.getScore()) {
+						t1.minusScore();
+					}else if(t2.getScore() > t1.getScore()) {
+						t2.plusScore();
+					}else if(t2.getScore()==t1.getScore()) {
+						t2.plusScore();
+					}
+				}
+				Print.dispScoreBoard(team1, team2, t1, t2); 
+			}
+		}
+	}
+	public static void pointsetWinner(int p,ArrayList<Player> team1,ArrayList<Player> team2,MatchPoint t1,MatchPoint t2){		
+		if (t1.getGame()==5 && t2.getGame()==5) {
+			while (Math.abs(t1.getGame()-t2.getGame())<2) {
+				try {
+		       		System.out.println("> 엔터를 누르세요.");
+		       		System.in.read();
+		       		System.in.skip(System.in.available());
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+				if(t1.getScore()==0&&t2.getScore()==0) {
+				t1.setScore(0); t2.setScore(0);
+				}				
+				if (p==1) {
+					if(t1.getScore()==3 && t2.getScore()<3) {
+						t1.plusScore();
+						t1.plusScore();
+					}else {
+						t1.plusScore();
+					}
+					}
+					else if(p==2) {
+						if(t1.getScore()<3&& t2.getScore()==3) {
+							t2.plusScore();
+							t2.plusScore();
+						}else {
+							t2.plusScore();
+						}	
+					}
+				
+				Print.dispScoreBoard(team1, team2, t1, t2); 
+
+				if (t1.getScore()==5) {
+					t1.plusGame();
+					t1.setScore(0); t2.setScore(0);
+					Print.dispScoreBoard(team1, team2, t1, t2); 
+				}else if (t2.getScore()==5) {
+					t2.plusGame();
+					t1.setScore(0); t2.setScore(0);
+					Print.dispScoreBoard(team1, team2, t1, t2); 
+				}
+
+				if (t1.getGame() - t2.getGame() ==2) {
+					t1.plusSet();
+					t1.setScore(0); t2.setScore(0);
+					t1.setGame(0); t2.setGame(0);
+					Print.dispScoreBoard(team1, team2, t1, t2); 
+					break;
+				}else if ( t2.getGame() - t1.getGame() ==2) {
+					t2.plusSet();
+					t1.setScore(0); t2.setScore(0);
+					t1.setGame(0); t2.setGame(0);
+					Print.dispScoreBoard(team1, team2, t1, t2); 
+					break;
+				}
+			}
+
+		}
+	}
 }//class
