@@ -49,41 +49,6 @@ class TeamCreate {
 			e.printStackTrace();
 		}
 	}
-	public static void writeTennisMember2() {
-
-		File f=new File(TeamCreate.path);
-		char con='y';
-		ArrayList<Player>plist=new ArrayList<Player>();
-
-		do {		
-			@SuppressWarnings("resource")
-			Scanner scanner=new Scanner(System.in);
-			System.out.print("이름 입력 : ");
-			String name=scanner.next();
-
-			plist.add(new Player(name));
-
-			System.out.println("계속할래?");
-
-			try {
-				con=(char) System.in.read();
-				System.in.skip(System.in.available());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}while(con !='n' );
-
-		//파일생성
-
-		try(FileOutputStream fos=new FileOutputStream(f,true);
-				ObjectOutputStream oos=new ObjectOutputStream(fos);
-				) {
-			oos.writeObject(plist);	
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	@SuppressWarnings("unchecked")
 	public static void readTennisMember(ArrayList<Player> players)  {
 		ArrayList<Player>plist=null;
@@ -113,7 +78,7 @@ class TeamCreate {
 			if(Character.toUpperCase(con) == 'Y') {
 				TeamCreate.writeTennisMember();
 			}else {
-				TeamCreate.writeTennisMember2();
+				return;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
