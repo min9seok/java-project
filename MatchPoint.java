@@ -2,11 +2,8 @@ package javaProject;
 
 class MatchPoint {
 	private int score;   
+	@SuppressWarnings("unused")
 	private int totalscore;
-	@SuppressWarnings("unused")
-	private int Atotalscore;
-	@SuppressWarnings("unused")
-	private int Btotalscore;
 	private int game;   
 	private int set;   
 	public int gettotalScore() {
@@ -15,19 +12,6 @@ class MatchPoint {
 	public void settotalScore(int totalscore) {
 		this.totalscore = totalscore;
 	}
-	public int getAtotalScore() {
-		return Atotalscore = totalscore;
-	}
-	public void setAtotalScore(int Atotalscore) {
-		this.Atotalscore = Atotalscore;
-	}
-	public int getBtotalScore() {
-		return Btotalscore = totalscore;
-	}
-	public void setBtotalScore(int Btotalscore) {
-		this.Btotalscore = Btotalscore;
-	}
-
 	public void plusScore() {
 		this.score++;
 	}
