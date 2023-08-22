@@ -135,10 +135,7 @@ public class TenisGame {
 					System.in.skip(System.in.available());
 				}catch (Exception e) {
 					e.printStackTrace();
-				}
-				if(t1.getScore()==0&&t2.getScore()==0) {
-					t1.setScore(0); t2.setScore(0);
-				}				
+				}						
 				if (p==1) {
 					if(t1.getScore()==3 && t2.getScore()<3) {
 						t1.plusScore();
@@ -370,7 +367,7 @@ public class TenisGame {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
-			return;
+			System.exit(-1);
 		}
 	}
 	public static void BWin(int p,ArrayList<Player> team1,ArrayList<Player> team2,MatchPoint t1,MatchPoint t2, int Aset[], int Bset[], int winSet, int SetValue){
@@ -399,7 +396,7 @@ public class TenisGame {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
-			return;
+			System.exit(-1);
 		}
 	}
 }//class

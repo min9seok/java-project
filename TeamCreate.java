@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 class TeamCreate {
 
-	private static final String path = System.getProperty("user.dir")+"\\src\\javaProject\\tenisMember.txt"; //콘솔용
-//	private static final String path = System.getProperty("user.dir")+"\\tenisMember.txt"; // exe생성용
+//	private static final String path = System.getProperty("user.dir")+"\\src\\javaProject\\tenisMember.txt"; //콘솔용
+	private static final String path = System.getProperty("user.dir")+"\\tenisMember.txt"; // exe생성용
 
 	//반환형 void 변환, 매개변수값 없애고 메서드 내에 경로값 저장해둠
 	public static void writeTennisMember() {
