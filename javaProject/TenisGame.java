@@ -1,14 +1,6 @@
 package javaProject;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,6 +12,7 @@ public class TenisGame {
 		ArrayList<Player> team1 = new ArrayList<>();
 		ArrayList<Player> team2 = new ArrayList<>();
 
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int startMenu = 0;
 		while(true) {
@@ -27,7 +20,7 @@ public class TenisGame {
 			startMenu = scanner.nextInt();
 
 			if(startMenu == 1) break; //게임시작
-			else if(startMenu == 2) FileManager.newFile(); //리스트생성
+			else if(startMenu == 2) TeamCreate.newFile(); //리스트생성
 			else if(startMenu == 3) System.exit(0); //게임종료
 
 		}
@@ -60,11 +53,10 @@ public class TenisGame {
 		while (t1.getSet()<winSet && t2.getSet()<winSet) {
 			t1.setScore(0); t2.setScore(0);
 			t1.setGame(0); t2.setGame(0);
-//			t1.setDeuceScore(0);t2.setDeuceScore(0);
 
 			while (t1.getGame()<6 && t2.getGame()<6) {
 				t1.setScore(0); t2.setScore(0);
-//				t1.setDeuceScore(0); t2.setDeuceScore(0);
+
 				while (t1.getScore()<4 &&t2.getScore()<4) {
 					if (t1.getSet()==winSet) {
 						System.out.println("team1 승리");
@@ -80,7 +72,6 @@ public class TenisGame {
 					}catch (Exception e) {
 						e.printStackTrace();
 					}
-//					t1.setDeuceScore(0); t2.setDeuceScore(0);
 					
 					int n = rnd.nextInt(2)+1;
 					if (n==1) {
@@ -99,10 +90,9 @@ public class TenisGame {
 							t2.plusScore();
 						}	
 					}
-					Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+					Print.dispScoreBoard(team1, team2, t1, t2); 
 
 
-					//듀스조건_scoreDeuce**
 					if(t1.getScore()==3 && t2.getScore()==3) {
 						while (Math.abs(t1.getScore() - t2.getScore())<2) {
 							try {
@@ -130,20 +120,9 @@ public class TenisGame {
 									t2.plusScore();
 								}
 							}
-							Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
-//							if (Math.abs(t1.getDeuceScore() - t2.getDeuceScore()) < 2) {
-//								t1.plusGame();
-//								t1.setScore(0); t2.setScore(0);
-//								Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
-//							}else if (Math.abs(t2.getDeuceScore() - t1.getDeuceScore()) < 2) {
-//								t2.plusGame();
-//								t1.setScore(0); t2.setScore(0);
-//								Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
-//							}
-						
+							Print.dispScoreBoard(team1, team2, t1, t2); 
 						}
 					}
-					//듀스조건_gameDuece**
 					if (t1.getGame()==5 && t2.getGame()==5) {
 						while (Math.abs(t1.getGame()-t2.getGame())<2) {
 							try {
@@ -174,29 +153,29 @@ public class TenisGame {
 									}	
 								}
 							
-							Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+							Print.dispScoreBoard(team1, team2, t1, t2); 
 
 							if (t1.getScore()==5) {
 								t1.plusGame();
 								t1.setScore(0); t2.setScore(0);
-								Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+								Print.dispScoreBoard(team1, team2, t1, t2); 
 							}else if (t2.getScore()==5) {
 								t2.plusGame();
 								t1.setScore(0); t2.setScore(0);
-								Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+								Print.dispScoreBoard(team1, team2, t1, t2); 
 							}
 
 							if (t1.getGame() - t2.getGame() ==2) {
 								t1.plusSet();
 								t1.setScore(0); t2.setScore(0);
 								t1.setGame(0); t2.setGame(0);
-								Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+								Print.dispScoreBoard(team1, team2, t1, t2); 
 								break;
 							}else if ( t2.getGame() - t1.getGame() ==2) {
 								t2.plusSet();
 								t1.setScore(0); t2.setScore(0);
 								t1.setGame(0); t2.setGame(0);
-								Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+								Print.dispScoreBoard(team1, team2, t1, t2); 
 								break;
 							}
 						}//while
@@ -206,24 +185,24 @@ public class TenisGame {
 						t1.plusGame();
 						t1.setScore(0);
 						t2.setScore(0);
-						Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+						Print.dispScoreBoard(team1, team2, t1, t2); 
 						if (t1.getGame()==6) {
 							t1.plusSet();
 							t1.setGame(0);
 							t2.setGame(0);
-							Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+							Print.dispScoreBoard(team1, team2, t1, t2); 
 						}
 						
 					}else if (t2.getScore()==5) {
 						t2.plusGame();
 						t1.setScore(0);
 						t2.setScore(0);
-						Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+						Print.dispScoreBoard(team1, team2, t1, t2); 
 						if (t2.getGame()==6) {
 							t2.plusSet();
 							t1.setGame(0);
 							t2.setGame(0);
-							Print.printScoreBoard(team1, team2, t1, t2); //★★★★★출력
+							Print.dispScoreBoard(team1, team2, t1, t2); 
 						} 
 					}//else if
 				}//while_score

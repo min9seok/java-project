@@ -6,7 +6,7 @@ class Player implements Serializable{
 
 	private static final long serialVersionUID = 1425821168775014880L;
 	private String name;
-
+	
 	Player(String name){
 		this.name = name;
 	}

@@ -16,13 +16,13 @@ class Print {
 	}
 
 	public static void printRuleSelect() {
-		System.out.println("\n\n\n\n\n\n\n\n");
+		System.out.println();
 		System.out.println("===========================");
 		System.out.println("             경기 규칙을 선택해주세요!");
 		System.out.println("===========================");
 	}
 
-	public static void printScoreBoard(ArrayList<Player> team1, ArrayList<Player> team2, 
+	public static void dispScoreBoard(ArrayList<Player> team1, ArrayList<Player> team2, 
 			MatchPoint t1, MatchPoint t2) {
 
 		String[] scores = {"00", "15", "30", "40","AD","G"};

@@ -8,14 +8,15 @@ class TeamSelection{
 	public static int teamDataInput(int set, int rule,
 			ArrayList<Player> players, 
 			ArrayList<Player> team1, ArrayList<Player> team2) {
-
+		@SuppressWarnings({ "unused", "resource" })
 		Scanner scanner = new Scanner(System.in);
 
+		@SuppressWarnings("unused")
 		String input = "";
 
 		if(rule == 1) {	//단식 선택
 			
-			FileManager.readTennisMember(players);
+			TeamCreate.readTennisMember(players);
 			Print.printPlayerNumberCheck(players.size(), 2);
 
 			System.out.println("\n\n\n\n1 팀원 선택");
@@ -27,7 +28,7 @@ class TeamSelection{
 
 			if(rule == 1 || rule == 2) {
 
-				FileManager.readTennisMember(players);
+				TeamCreate.readTennisMember(players);
 				Print.printPlayerNumberCheck(players.size(), 4);
 				System.out.println("\n\n\n\n1 팀원 선택");
 				teamSelect(players, team1);
@@ -56,8 +57,8 @@ class TeamSelection{
 	}
 
 	private static void teamSelect(ArrayList<Player> players, ArrayList<Player> team) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
-
 		String input = "";
 		boolean flag = false;
 		int playersSize = players.size();
